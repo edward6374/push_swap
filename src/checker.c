@@ -6,11 +6,11 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:00:48 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/18 11:46:59 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/20 18:10:56 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
 int	my_atoi(char *str, int mode)
 {
@@ -50,7 +50,7 @@ int	does_exist(char	*str, char **argv, int i)
 	{
 		if (j != i)
 		{
-			if (ft_strncmp(str, argv[j], ft_strlen(str)) == 0)
+			if (ft_strncmp(str, argv[j], ft_strlen(argv[j])) == 0)
 				return (0);
 		}
 		j++;

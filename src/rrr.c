@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 11:50:35 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/18 13:06:51 by vduchi           ###   ########.fr       */
+/*   Created: 2022/11/18 19:52:43 by vduchi            #+#    #+#             */
+/*   Updated: 2022/11/18 19:57:28 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
-int	sb(t_stack *stack)
+int	rrr(t_stack *stack)
 {
-	int	temp;
-
-	if (stack->len_b >= 2)
-	{
-		temp = stack->stack_b[0];
-		stack->stack_b[0] = stack->stack_b[1];
-		stack->stack_b[1] = temp;
-		temp = stack->supp_b[0];
-		stack->supp_b[0] = stack->supp_b[1];
-		stack->supp_b[1] = temp;
-		ft_printf("sb\n");
-	}
-	else
-	{
-		ft_printf("SB Failed!\n");
+	if (!rra(stack) || !rrb(stack))
 		return (0);
-	}
 	return (1);
 }
