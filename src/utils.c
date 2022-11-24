@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:59:01 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/20 16:51:28 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/24 14:56:07 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	fill_supp(t_stack *stack)
 {
 	int	i;
-	int	min;
-	int	lim;
-	int	idx;
-	int	last;
+	int		min;
+	int		lim;
+	int		idx;
+	long	last;
 
 	lim = -1;
-	last = -2147483648;
+	last = -2147483649;
 	while (++lim < stack->len_a)
 	{
 		i = -1;
@@ -64,7 +64,7 @@ int	print_error(void)
 int	end_program(t_stack *stack, int i)
 {
 	if (i)
-		print_error();
+		write(2, "Error\n", 6);
 	if (stack->supp_a)
 		free(stack->supp_a);
 	if (stack->stack_a)
@@ -83,6 +83,7 @@ int	init_stack(t_stack *stack, int count, char **argv)
 	i = -1;
 	stack->len_a = count - 1;
 	stack->len_b = 0;
+	stack->moved = 0;
 	stack->supp_a = (int *)malloc(sizeof(int) * (count - 1));
 	if (!stack->supp_a)
 		return (end_program(stack, 1));

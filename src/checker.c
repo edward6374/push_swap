@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:00:48 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/20 18:10:56 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:27:24 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,6 @@ int	is_number_and_int(char *str)
 			sign = -1;
 			i++;
 		}
-		else if (str[i] == '+' && i == 0)
-		{
-			sign = 1;
-			i++;
-		}
 		else if (str[i] < '0' || str[i] > '9')
 			return (0);
 	}
@@ -89,10 +84,17 @@ int	is_number_and_int(char *str)
 int	check_args(char **argv)
 {
 	int	i;
+	int	count;
 
 	i = 0;
+	count = 0;
 	while (argv[++i])
 	{
+		if (ft_strncmp(argv[i], "0", 1) == 0 || ft_strncmp(argv[i], "-0", 1) == 0)
+			count++;
+		if ((ft_strncmp(argv[i], "0", 1) == 0 || 
+			ft_strncmp(argv[i], "-0", 1) == 0) && count == 2)
+			return (0);
 		if (!is_number_and_int(argv[i]) || !does_exist(argv[i], argv, i))
 			return (0);
 	}

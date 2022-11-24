@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:11:18 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/20 13:55:27 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:33:05 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,14 @@ int	four_numbers(t_stack *stack, int n)
 	check = 0;
 	while (!check)
 	{
-		if (stack->supp_a[0] != n)
+		if (stack->supp_a[0] != n && stack->supp_a[1] != n)
 		{
 			rra(stack);
 			continue ;
 		}
+		else if ((stack->supp_a[0] != n && stack->supp_a[1] == n) ||
+			(stack->supp_a[0] != n && stack->supp_a[2] == n))
+			ra(stack);
 		check++;
 	}
 	pb(stack);
@@ -64,11 +67,14 @@ int	five_numbers(t_stack *stack)
 	check = 0;
 	while (!check)
 	{
-		if (stack->supp_a[0] != 0)
+		if (stack->supp_a[0] != 0 && stack->supp_a[1] != 0)
 		{
 			rra(stack);
 			continue ;
 		}
+		else if ((stack->supp_a[0] != 0 && stack->supp_a[1] == 0) ||
+			(stack->supp_a[0] != 0 && stack->supp_a[2] == 0))
+			ra(stack);
 		check++;
 	}
 	pb(stack);

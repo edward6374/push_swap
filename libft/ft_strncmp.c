@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:08:27 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/20 18:10:08 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/21 19:40:42 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-//	if (n == 0)
-//		return (((unsigned char)*(s1 - 1)) - ((unsigned char)*(s2 - 1)));
-//	else
 	return (((unsigned char)*s1) - ((unsigned char)*s2));
 }

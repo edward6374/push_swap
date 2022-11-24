@@ -6,7 +6,7 @@
 #    By: vduchi <vduchi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/22 22:11:19 by vduchi            #+#    #+#              #
-#    Updated: 2022/11/20 19:14:55 by vduchi           ###   ########.fr        #
+#    Updated: 2022/11/22 17:36:18 by vduchi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ ALL_LIBS	=	libft/libft.a ft_printf/libftprintf.a
 SRCS		=	src/main.c src/utils.c src/checker.c src/sa.c src/sb.c \
 				src/ss.c src/pa.c src/pb.c src/ra.c src/rb.c src/rr.c \
 				src/rra.c src/rrb.c src/rrr.c src/until_five_numbers.c \
-				src/until_hundred_numbers.c src/more_than_hundred.c
+				src/until_hundred_numbers.c src/more_than_hundred.c \
+				src/return_stack.c
 OBJS		=	$(patsubst $(SRCS_DIR)/%, $(OBJ_DIR)/%, $(SRCS:.c=.o))
 DEPS		=	$(patsubst $(SRCS_DIR)/%, $(DEPS_DIR)/%, $(SRCS:.c=.d))
 

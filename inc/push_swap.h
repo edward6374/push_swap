@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:27:18 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/20 13:50:12 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/22 18:31:17 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 	int	*supp_a;
 	int	*stack_b;
 	int	*supp_b;
+	int	moved;
 }	t_stack;
 
 /*  ---		Sa.c	---  */
@@ -65,9 +66,13 @@ int		check_args(char **argv);
 int		my_atoi(char *str, int mode);
 
 /*  ---		Utils.c	   ---  */
+int		print_error(void);
 void	print_stack(t_stack *stack);
 int		end_program(t_stack *stack, int i);
 int		init_stack(t_stack *stack, int count, char **argv);
+
+/*  ---		Return_stack.c	   ---  */
+void	return_to_a(t_stack *stack);
 
 /*  ---		Until_five_numbers.c   ---  */
 int		two_numbers(t_stack *stack);

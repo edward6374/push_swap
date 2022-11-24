@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:51:24 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/18 20:07:27 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/21 19:39:03 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ int	loop_rrb(t_stack *stack, int *new, int *new_supp, int *temp)
 
 int	rrb(t_stack *stack)
 {
-	int	i;
 	int	temp[2];
 	int	*new;
 	int	*new_supp;
 
-	i = -1;
 	if (stack->len_b < 1)
 	{
 		ft_printf("RRB Failed!\n");

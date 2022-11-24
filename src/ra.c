@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:31:38 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/18 20:06:07 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/21 19:39:15 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ int	loop_ra(t_stack *stack, int *new, int *new_supp, int *temp)
 
 int	ra(t_stack *stack)
 {
-	int	i;
 	int	temp[2];
 	int	*new;
 	int	*new_supp;
 
-	i = -1;
 	if (stack->len_a < 1)
 	{
 		ft_printf("RA Failed!\n");
