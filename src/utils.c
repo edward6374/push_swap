@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:59:01 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/24 14:56:07 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/25 17:00:43 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	fill_supp(t_stack *stack)
 {
-	int	i;
+	int		i;
 	int		min;
 	int		lim;
 	int		idx;

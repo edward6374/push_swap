@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:57:56 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/23 19:55:44 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/26 12:08:34 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,29 @@
 	return (0);
 }
 */
-void	check_near_a_more(t_stack *stack, int min, int max)
+int	check_near_a_more(t_stack *stack, int min, int max)
 {
 	int	i;
 
-	i = 0;
-	while (i < (stack->len_a / 2))
+	i = -1;
+	if ((stack->supp_a[stack->len_a - 1] >= min &&
+		stack->supp_a[stack->len_a - 1] <= ((min + max) / 2)))
+	{
+		rra(stack);
+		pb(stack);
+		rb(stack);
+		return (1);
+	}
+	else if (stack->supp_a[stack->len_a - 1] > ((min + max) / 2) &&
+		stack->supp_a[stack->len_a - 1] <= max)
+	{
+		rra(stack);
+		pb(stack);
+		return (1);
+	}
+	else
+	{
+	while (++i < stack->len_a)
 	{
 		if (stack->supp_a[i] >= min &&
 			stack->supp_a[i] <= max)
@@ -42,35 +59,38 @@ void	check_near_a_more(t_stack *stack, int min, int max)
 			ra(stack);
 			break ;
 		}
-		else if (stack->supp_a[stack->len_a - i - 1] >= min &&
-			stack->supp_a[stack->len_a - i - 1] <= max)
-		{
-			rra(stack);
-			break ;
-		}
+//		else if (stack->supp_a[stack->len_a - i - 1] >= min &&
+//			stack->supp_a[stack->len_a - i - 1] <= max)
+//		{
+//			rra(stack);
+//			break ;
+//		}
 //		else if (second_check_a(stack, min, max, i))
 //			break;
-		i++;
+//		}
 	}
+	}
+	return (0);
 }
 
 int	push_a_more(t_stack *stack, int min, int max)
 {
-	if ((stack->supp_a[0] >= min &&
-		stack->supp_a[0] <= ((min + max) / 2)))
+	int	i;
+
+	i = -1;
+	if ((stack->supp_a[0] >= min && stack->supp_a[0] <= ((min + max) / 2)))
 	{
 		pb(stack);
 		rb(stack);
 		return (1);
 	}
-	else if (stack->supp_a[0] > ((min + max) / 2) &&
-		stack->supp_a[0] <= max)
+	else if (stack->supp_a[0] > ((min + max) / 2) && stack->supp_a[0] <= max)
 	{
 		pb(stack);
 		return (1);
 	}
-	else
-		check_near_a_more(stack, min, max);
+	else if (check_near_a_more(stack, min, max))
+		return (1);
 	return (0);
 }
 
@@ -93,6 +113,7 @@ int	more_than_hundred(t_stack *stack)
 			count = part * (times - 1);
 		}
 		i += push_a_more(stack, count, times * part);
+//		print_stack(stack);
 	}
 	return_to_a(stack);
 	return (1);
