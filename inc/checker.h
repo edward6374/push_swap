@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 17:27:18 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/28 20:01:06 by vduchi           ###   ########.fr       */
+/*   Created: 2022/11/28 20:00:14 by vduchi            #+#    #+#             */
+/*   Updated: 2022/11/28 20:18:47 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "../libft/libft.h"
 # include "../ft_printf/include/ft_printf.h"
+# include "../get_next_line/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -84,5 +85,8 @@ int		until_hundred(t_stack *stack);
 
 /*  ---		More_than_hundred_numbers.c   ---  */
 int		more_than_hundred(t_stack *stack);
+
+/*  ---		Get_next_line.c   ---  */
+char	*get_next_line(int fd);
 
 #endif
