@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 20:00:14 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/28 20:18:47 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:10:25 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int		my_atoi(char *str, int mode);
 
 /*  ---		Utils.c	   ---  */
 int		print_error(void);
+void	set_stack(t_stack *stack);
 void	print_stack(t_stack *stack);
 int		end_program(t_stack *stack, int i);
 int		init_stack(t_stack *stack, int count, char **argv);

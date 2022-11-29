@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:59:01 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/25 17:00:43 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:50:08 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,6 @@ void	fill_supp(t_stack *stack)
 		last = min;
 		stack->supp_a[idx] = lim;
 	}
-}
-
-void	print_stack(t_stack *stack)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	j = -1;
-	ft_printf("\nStack A\n");
-	while (++i < stack->len_a)
-		ft_printf("Number %d: %d, Relative: %d\n", i + 1, stack->stack_a[i], stack->supp_a[i]);
-	ft_printf("\nStack B\n\n");
-	while (++j < stack->len_b)
-		ft_printf("Number %d: %d, Relative: %d\n", j + 1, stack->stack_b[j], stack->supp_b[j]);
 }
 
 int	print_error(void)

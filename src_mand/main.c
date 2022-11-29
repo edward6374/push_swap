@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:25:51 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/25 17:04:01 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:13:38 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ int	main(int argc, char **argv)
 		if (!init_stack(&stack, argc, argv))
 			return (end_program(&stack, 1));
 	}
-//	print_stack(&stack);
 	if (!sort_alg(&stack))
 		return (end_program(&stack, 1));
 	end_program(&stack, 0);

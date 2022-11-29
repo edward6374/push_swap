@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:00:48 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/22 17:27:24 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:22:51 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,11 @@ int	check_args(char **argv)
 	count = 0;
 	while (argv[++i])
 	{
-		if (ft_strncmp(argv[i], "0", 1) == 0 || ft_strncmp(argv[i], "-0", 1) == 0)
+		if (ft_strncmp(argv[i], "0", 1) == 0
+			|| ft_strncmp(argv[i], "-0", 1) == 0)
 			count++;
-		if ((ft_strncmp(argv[i], "0", 1) == 0 || 
-			ft_strncmp(argv[i], "-0", 1) == 0) && count == 2)
+		if ((ft_strncmp(argv[i], "0", 1) == 0
+				|| ft_strncmp(argv[i], "-0", 1) == 0) && count == 2)
 			return (0);
 		if (!is_number_and_int(argv[i]) || !does_exist(argv[i], argv, i))
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:25:51 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/28 20:56:09 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:56:09 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,30 +38,69 @@ int	is_ordered(char **argv, int count)
 	return (1);
 }
 
-void	set_stack(t_stack *stack)
-{
-	stack->stack_a = NULL;
-	stack->stack_b = NULL;
-	stack->supp_a = NULL;
-	stack->supp_b = NULL;
-}
-
 int	check_stacks(t_stack *stack)
 {
-	(void)stack;
-	return (0);
+	int	i;
+
+	i = 0;
+	if (stack->len_a <= 0 || stack->len_b > 0)
+		return (0);
+	while (i < (stack->len_a - 1))
+	{
+		if (stack->supp_a[i] > stack->supp_a[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	do_mov(char *line, t_stack *stack)
 {
-	(void)line;
-	(void)stack;
-	return (0);
+	int	res;
+
+	if (!ft_strncmp(line, "ra\n", 3))
+		res = ra(stack);
+	else if (!ft_strncmp(line, "rb\n", 3))
+		res = rb(stack);
+	else if (!ft_strncmp(line, "sa\n", 3))
+		res = sa(stack);
+	else if (!ft_strncmp(line, "sb\n", 3))
+		res = sb(stack);
+	else if (!ft_strncmp(line, "pa\n", 3))
+		res = pa(stack);
+	else if (!ft_strncmp(line, "pb\n", 3))
+		res = pb(stack);
+	else if (!ft_strncmp(line, "rr\n", 3))
+		res = rr(stack);
+	else if (!ft_strncmp(line, "rra\n", 4))
+		res = rra(stack);
+	else if (!ft_strncmp(line, "rrb\n", 4))
+		res = rrb(stack);
+	else
+		res = 0;
+	return (res);
+}
+
+int	loop(t_stack *stack)
+{
+	char	*line;
+
+	line = get_next_line(0);
+	while (line)
+	{
+		if (!do_mov(line, stack))
+			return (0);
+		free(line);
+		line = get_next_line(0);
+	}
+	if (!check_stacks(stack))
+		return (-1);
+	return (1);
 }
 
 int	main(int argc, char **argv)
 {
-	char	*line;
+	int		res;
 	t_stack	stack;
 
 	set_stack(&stack);
@@ -78,12 +117,10 @@ int	main(int argc, char **argv)
 		if (!init_stack(&stack, argc, argv))
 			return (end_program(&stack, 1));
 	}
-	line = get_next_line(0);
-	while (line)
-	{
-		do_mov(line, &stack);
-		line = get_next_line(0);
-	}
-	check_stacks(&stack);
-	return (0);
+	res = loop(&stack);
+	if (res == 0)
+		return (end_program(&stack, 1));
+	else if (res == -1)
+		return (end_program(&stack, 3));
+	return (end_program(&stack, 2));
 }

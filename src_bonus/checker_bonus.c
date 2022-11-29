@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:00:48 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/28 20:02:39 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:59:26 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	is_number_and_int(char *str)
 		else if (str[i] < '0' || str[i] > '9')
 			return (0);
 	}
-	if (((sign == 1 || sign == -1) && i == 1) || (i > 11 && sign == 0) \
+	if (((sign == 1 || sign == -1) && i == 1) || (i > 11 && sign == 0)
 		|| (i > 12 && (sign == 1 || sign == -1)) || !my_atoi(str, 0))
 		return (0);
 	return (1);
@@ -90,10 +90,11 @@ int	check_args(char **argv)
 	count = 0;
 	while (argv[++i])
 	{
-		if (ft_strncmp(argv[i], "0", 1) == 0 || ft_strncmp(argv[i], "-0", 1) == 0)
+		if (ft_strncmp(argv[i], "0", 1) == 0
+			|| ft_strncmp(argv[i], "-0", 1) == 0)
 			count++;
-		if ((ft_strncmp(argv[i], "0", 1) == 0 || 
-			ft_strncmp(argv[i], "-0", 1) == 0) && count == 2)
+		if ((ft_strncmp(argv[i], "0", 1) == 0
+				|| ft_strncmp(argv[i], "-0", 1) == 0) && count == 2)
 			return (0);
 		if (!is_number_and_int(argv[i]) || !does_exist(argv[i], argv, i))
 			return (0);

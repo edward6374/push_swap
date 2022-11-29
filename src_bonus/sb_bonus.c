@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:35 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/28 20:07:18 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 11:51:40 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ int	sb(t_stack *stack)
 		temp = stack->supp_b[0];
 		stack->supp_b[0] = stack->supp_b[1];
 		stack->supp_b[1] = temp;
-		ft_printf("sb\n");
 	}
 	else
-	{
-		ft_printf("SB Failed!\n");
 		return (0);
-	}
 	return (1);
 }

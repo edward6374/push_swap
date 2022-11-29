@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:11:18 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/22 17:33:05 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:39:58 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	three_numbers(t_stack *stack)
 			sa(stack);
 		if (stack->stack_a[1] > stack->stack_a[2])
 			rra(stack);
-		if (stack->stack_a[0] < stack->stack_a[1] &&
-			stack->stack_a[1] < stack->stack_a[2])
+		if (stack->stack_a[0] < stack->stack_a[1]
+			&& stack->stack_a[1] < stack->stack_a[2])
 			check++;
 	}
 	return (1);
@@ -49,8 +49,8 @@ int	four_numbers(t_stack *stack, int n)
 			rra(stack);
 			continue ;
 		}
-		else if ((stack->supp_a[0] != n && stack->supp_a[1] == n) ||
-			(stack->supp_a[0] != n && stack->supp_a[2] == n))
+		else if ((stack->supp_a[0] != n && stack->supp_a[1] == n)
+			|| (stack->supp_a[0] != n && stack->supp_a[2] == n))
 			ra(stack);
 		check++;
 	}
@@ -72,8 +72,8 @@ int	five_numbers(t_stack *stack)
 			rra(stack);
 			continue ;
 		}
-		else if ((stack->supp_a[0] != 0 && stack->supp_a[1] == 0) ||
-			(stack->supp_a[0] != 0 && stack->supp_a[2] == 0))
+		else if ((stack->supp_a[0] != 0 && stack->supp_a[1] == 0)
+			|| (stack->supp_a[0] != 0 && stack->supp_a[2] == 0))
 			ra(stack);
 		check++;
 	}

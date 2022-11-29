@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:46:30 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/22 17:59:30 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 12:48:18 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ void	check_near_a(t_stack *stack, int min, int max)
 	i = 0;
 	while (i < stack->len_a)
 	{
-		if (stack->supp_a[i] >= min &&
-			stack->supp_a[i] <= max &&
-			i <= stack->len_a)
+		if (stack->supp_a[i] >= min
+			&& stack->supp_a[i] <= max
+			&& i <= stack->len_a)
 		{
 			ra(stack);
 			break ;
 		}
-		else if (stack->supp_a[i] >= min &&
-			stack->supp_a[i] <= max &&
-			i > stack->len_a)
+		else if (stack->supp_a[i] >= min
+			&& stack->supp_a[i] <= max
+			&& i > stack->len_a)
 		{
 			rra(stack);
 			break ;
@@ -39,15 +39,15 @@ void	check_near_a(t_stack *stack, int min, int max)
 
 int	push_a(t_stack *stack, int min, int max)
 {
-	if ((stack->supp_a[0] >= min &&
-		stack->supp_a[0] <= ((min + max) / 2)))
+	if ((stack->supp_a[0] >= min
+			&& stack->supp_a[0] <= ((min + max) / 2)))
 	{
 		pb(stack);
 		rb(stack);
 		return (1);
 	}
-	else if (stack->supp_a[0] > ((min + max) / 2) &&
-		stack->supp_a[0] <= max)
+	else if (stack->supp_a[0] > ((min + max) / 2)
+		&& stack->supp_a[0] <= max)
 	{
 		pb(stack);
 		return (1);

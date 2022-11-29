@@ -6,7 +6,7 @@
 #    By: vduchi <vduchi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/22 22:11:19 by vduchi            #+#    #+#              #
-#    Updated: 2022/11/28 21:16:11 by vduchi           ###   ########.fr        #
+#    Updated: 2022/11/29 13:11:50 by vduchi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,15 +53,14 @@ SRCS			=	src_mand/main.c src_mand/utils.c src_mand/checker.c src_mand/sa.c src_m
 		  	  		src_mand/rra.c src_mand/rrb.c src_mand/rrr.c src_mand/until_five_numbers.c \
 		  	  		src_mand/until_hundred_numbers.c src_mand/more_than_hundred.c \
 		  	  		src_mand/return_stack.c
-SRCS_BONUS		=	src_bonus/main.c src_bonus/utils.c src_bonus/checker.c src_bonus/sa.c src_bonus/sb.c \
-					src_bonus/ss.c src_bonus/pa.c src_bonus/pb.c src_bonus/ra.c src_bonus/rb.c src_bonus/rr.c \
-					src_bonus/rra.c src_bonus/rrb.c src_bonus/rrr.c src_bonus/until_five_numbers.c \
-					src_bonus/until_hundred_numbers.c src_bonus/more_than_hundred.c src_bonus/return_stack.c
+SRCS_BONUS		=	src_bonus/main_bonus.c src_bonus/utils_bonus.c src_bonus/checker_bonus.c \
+					src_bonus/sa_bonus.c src_bonus/sb_bonus.c src_bonus/ss_bonus.c src_bonus/pa_bonus.c \
+					src_bonus/pb_bonus.c src_bonus/ra_bonus.c src_bonus/rb_bonus.c src_bonus/rr_bonus.c \
+					src_bonus/rra_bonus.c src_bonus/rrb_bonus.c src_bonus/rrr_bonus.c src_bonus/return_stack_bonus.c
 GNL_SRCS		=	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 OBJS			=	$(patsubst $(SRC_DIR_MAN)/%, $(OBJ_DIR_MAN)/%, $(SRCS:.c=.o))
 OBJS_BONUS		=	$(patsubst $(SRC_DIR_BON)/%, $(OBJ_DIR_BON)/%, $(SRCS_BONUS:.c=.o))
 GNL_OBJS		=	$(patsubst $(GNL_DIR)/%, $(GNL_DIR)/%, $(GNL_SRCS:.c=.o))
-#GNL_OBJS		=	$(GNL_SRCS:.c=.o)
 DEPS			=	$(patsubst $(SRC_DIR_MAN)/%, $(DEPS_DIR_MAN)/%, $(SRCS:.c=.d))
 DEPS_BONUS		=	$(patsubst $(SRC_DIR_BON)/%, $(DEPS_DIR_BON)/%, $(SRCS_BONUS:.c=.d))
 GNL_DEPS		=	$(patsubst $(GNL_DIR)/%, $(GNL_DIR)/%, $(GNL_SRCS:.c=.d))

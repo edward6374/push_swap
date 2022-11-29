@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:31:38 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/28 20:04:13 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 11:48:23 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	loop_ra(t_stack *stack, int *new, int *new_supp, int *temp)
 	free(stack->supp_a);
 	stack->stack_a = new;
 	stack->supp_a = new_supp;
-	ft_printf("ra\n");
 	return (1);
 }
 
@@ -39,10 +38,7 @@ int	ra(t_stack *stack)
 	int	*new_supp;
 
 	if (stack->len_a < 1)
-	{
-		ft_printf("RA Failed!\n");
 		return (0);
-	}
 	temp[0] = stack->stack_a[0];
 	temp[1] = stack->supp_a[0];
 	new = (int *)malloc(sizeof(int) * stack->len_a);
