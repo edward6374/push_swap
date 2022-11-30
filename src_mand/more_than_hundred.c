@@ -6,11 +6,11 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:57:56 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/29 12:48:50 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:43:33 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
 void	check_loop(t_stack *stack, int min, int max)
 {

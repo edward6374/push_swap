@@ -6,7 +6,7 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:57:08 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/20 13:52:48 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:44:12 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	pa_failed(int **arr, int i)
 		free(arr[i--]);
 	if (arr)
 		free(arr);
-	ft_printf("Malloc failed!\n");
 	return (0);
 }
 
@@ -66,10 +65,7 @@ int	pa(t_stack *stack)
 
 	i = 0;
 	if (stack->len_b < 1)
-	{
-		ft_printf("PA Failed\n");
 		return (0);
-	}
 	new_arr = (int **)malloc(sizeof(int *) * 4);
 	if (!new_arr)
 		return (pa_failed(new_arr, 0));
@@ -84,6 +80,7 @@ int	pa(t_stack *stack)
 		i++;
 	}
 	move_pa(stack, new_arr);
-	ft_printf("pa\n");
+	if (ft_printf("pa\n") == -1)
+		return (0);
 	return (1);
 }

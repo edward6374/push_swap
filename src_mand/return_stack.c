@@ -6,11 +6,11 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:34:54 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/29 12:48:39 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:46:05 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
 void	check_a(t_stack *stack)
 {

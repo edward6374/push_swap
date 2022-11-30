@@ -6,11 +6,11 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:53:50 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/21 19:39:25 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:45:53 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
 int	loop_rb(t_stack *stack, int *new, int *new_supp, int *temp)
 {
@@ -28,7 +28,8 @@ int	loop_rb(t_stack *stack, int *new, int *new_supp, int *temp)
 	free(stack->supp_b);
 	stack->stack_b = new;
 	stack->supp_b = new_supp;
-	ft_printf("rb\n");
+	if (ft_printf("rb\n") == -1)
+		return (0);
 	return (1);
 }
 
@@ -39,10 +40,7 @@ int	rb(t_stack *stack)
 	int	*new_supp;
 
 	if (stack->len_b < 1)
-	{
-		ft_printf("RB Failed!\n");
 		return (0);
-	}
 	temp[0] = stack->stack_b[0];
 	temp[1] = stack->supp_b[0];
 	new = (int *)malloc(sizeof(int) * stack->len_b);

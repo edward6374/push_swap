@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:59:01 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/29 12:56:33 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/29 13:17:14 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ int	end_program(t_stack *stack, int i)
 		write(2, "Error\n", 6);
 	else if (i == 2)
 	{
-		if (ft_printf("OK!\n") == -1)
+		if (ft_printf("OK\n") == -1)
 			write(2, "Error\n", 6);
 	}
 	else if (i == 3)
 	{
-		if (ft_printf("KO!\n") == -1)
+		if (ft_printf("KO\n") == -1)
 			write(2, "Error\n", 6);
 	}
 	if (stack->supp_a)

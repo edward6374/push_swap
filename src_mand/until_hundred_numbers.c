@@ -6,11 +6,11 @@
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:46:30 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/29 12:48:18 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:48:48 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
 void	check_near_a(t_stack *stack, int min, int max)
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vduchi <vduchi@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 17:25:51 by vduchi            #+#    #+#             */
-/*   Updated: 2022/11/29 12:56:09 by vduchi           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:49:41 by vduchi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/checker.h"
+#include "checker.h"
 
 int	is_ordered(char **argv, int count)
 {
@@ -89,7 +89,10 @@ int	loop(t_stack *stack)
 	while (line)
 	{
 		if (!do_mov(line, stack))
+		{
+			free(line);
 			return (0);
+		}
 		free(line);
 		line = get_next_line(0);
 	}
